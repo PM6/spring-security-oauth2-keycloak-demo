@@ -1,0 +1,19 @@
+server:
+  port: 8083
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          oauth2-client-credentials:
+            client-id: oauth2-client-credentials
+            client-secret: 6qLqCDGQHrqXtuVeny5Pc9L9VSSl0V2Q
+            scope: openid, profile, roles
+            authorization-grant-type: client_credentials
+        provider:
+          oauth2-client-credentials:
+            issuer-uri: http://localhost:8180/realms/oauth2-demo-realm
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8180/auth/realms/oauth2-demo-realm/protocol/openid-connect/certs
